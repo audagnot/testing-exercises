@@ -1,5 +1,6 @@
 # Author: Pietro Berkes <berkes _at_ brandeis _dot_ edu>
 
+
 def find_maxima(x):
     """Find local maxima of x.
 
@@ -15,7 +16,7 @@ def find_maxima(x):
     idx -- list of indices of the local maxima in x
     """
 
-    if type(x) != type([]):
+    if not isinstance(x, list):
         message = 'Input argument must be a list, got %d instead' % type(x)
         raise TypeError(message)
 
