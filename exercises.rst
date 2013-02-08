@@ -114,3 +114,64 @@ indices.
        x = [1, 2, 2, 3, 1]
        x = [1, 3, 2, 2, 1]
        x = [3, 2, 2, 3]
+
+Exercise 4 - The game Set®
+--------------------------
+
+:Level: [advanced]
+:Goal: Write a solver for the game Set and optimize it until it flies
+
+Set is a logic game consisting in a deck of cards that vary along 4 dimensions:
+color, shape, texture, and number.  For each dimensions, there are 3 possible
+features (e.g., there are 3 possible textures: full, empty, striped).  A valid
+set is formed by three cards that have on each dimension either the same
+feature, or three different features.  So for example in the image below, the
+first three cards are a valid set, as they are different in all features across
+all dimensions; the second three cards also form a valid set, because they
+share the same features for color and number, and are different in shape and
+texture; the cards on the bottom are not a set, because two cards have the
+“full” texture, while one is striped.
+
+.. image:: set.png
+   :scale: 30
+
+In the solitary version of the game, 12 random cards are put on the table, and
+the player has to find as many valid sets as possible.  To test that you
+understand the rules, visit
+http://www.nytimes.com/ref/crosswords/setpuzzle.html and solve the daily puzzle
+A longer description of the rules is available at
+http://www.setgame.com/set/index.html. You can visit http://multiplayerset.com/
+to play an online game.
+
+In the code, we are going to represent each card by a 4-dimensional vector (for
+color, shape, texture, and number); each element is either ``0``, ``1``, or
+``2``, representing the three possible features for each dimension.  For
+example, two cards might be represented as ``[2, 2, 0, 1]`` and ``[2, 0, 0,
+0]``; this means that they have the same features for dimensions ``0`` and
+``2`` and different features for dimensions ``1`` and ``3``.
+
+Enter the directory ``set``.
+
+#. The test module ``test_set.py`` contains a test, ``test_is_set``, for a function
+   that takes a list of cards and three indices and returns ``True`` if the cards at
+   those indices form a set. Implement ``is_set`` in ``set_solver.py``.
+
+#. The test module also contains a test for a solver that finds all possible
+   sets in a list of cards.  Write a brute­force Set solver, ``find_sets``: cycle
+   through all possible triplets and call ``is_set`` for each triplet.  If it is a
+   set, append the indices of the cards to a list.  Return the list.
+
+#. The brute­force approach is brutally inefficient. If you already know how
+   to, use a profiler to verify the bottleneck. Write a faster version,
+   find_sets_fast, using list comprehensions and the function combinations from
+   the module ``itertools`` (http://docs.python.org/library/itertools.html).  Test
+   the new function using fuzzing: generate random cards and test that the output
+   of find_sets_fast is the same of the brute force solver.  (Use the function
+   ``random_cards`` in ``set_solver.py`` to generate random draws of cards.)
+
+
+#. Use ``%timeit`` from IPython to measure the increase in speed.
+
+#. (optional) Given any two cards, there is one and only one card that makes
+   them form a valid set. Use this idea to write a much faster Set solver, and
+   measure its performance.
