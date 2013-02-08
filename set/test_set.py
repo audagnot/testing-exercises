@@ -3,7 +3,7 @@ import numpy
 import set_solver
 
 class TestSets(unittest.TestCase):
-    
+
     def test_is_set(self):
         """Test set validator (Exercise 3a)."""
         cards = numpy.array([[1,1,1,2,0],
