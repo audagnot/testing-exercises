@@ -60,11 +60,11 @@ Exercise 3 – Deceivingly simple function
 :Level: [intermediate]
 :Goal: General practice of debugging and unit testing using agile development techniques.
 
-Enter the directory deceivingly_simple. The file ``maxima.py`` contains a
+Enter the directory ``deceivingly_simple``. The file ``maxima.py`` contains a
 function, ``find_maxima``, that finds local maxima in a list and returns their
 indices.
 
-#. Run the example code in the docstring of the function using doctest, and
+#. Run the example code in the docstring of the function using ``doctest``, and
    make sure they pass.
 
 #. Using IPython, test the function with these input arguments and others of
