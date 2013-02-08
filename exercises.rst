@@ -1,7 +1,10 @@
 Exercises: Testing with Python
 ==============================
 
-:author: Valentin Haenel using previous material by Pietro Berkes
+:Author: Valentin Haenel <valentin@haenel.co>
+:Derivative of: `Previous material by Pietro Berkes <https://python.g-node.org/python-summerschool-2012/software_carpentry>`_
+:License: `CC-BY-SA <http://creativecommons.org/licenses/by-sa/2.0/>`_
+:Url: https://github.com/pcp13/testing-exercises
 
 Exercise 1 – Writing a test suite
 ---------------------------------
