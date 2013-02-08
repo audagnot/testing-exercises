@@ -1,4 +1,5 @@
 import numpy
+import itertools
 
 ndims = 4
 nfeatures = 3
