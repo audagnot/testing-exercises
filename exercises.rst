@@ -37,8 +37,8 @@ is correct, so you should test that the returned string is one or the other.
    ``fillchar`` is set to an empty string or to a string longer than one
    character.
 
-Exercise 2
-----------
+Exercise 2 - Using ``nosetests``
+--------------------------------
 
 :Level: [basic]
 :Goal: learn to use the ``nosetests`` runner
