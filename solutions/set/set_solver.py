@@ -60,11 +60,9 @@ def find_sets(cards):
             for k in range(j+1, n):
                 if is_set(cards, (i, j, k)):
                     sets.append((i, j, k))
-     
     return sets
 
 def find_sets_fast(cards):
-    """Brute-force Sets solver."""
     return [indices
             for indices in itertools.combinations(range(cards.shape[1]), 3)
             if is_set(cards, indices)]
